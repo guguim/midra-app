@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: midra-api
+  datasource:
+    url: jdbc:postgresql://localhost:5432/midradb
+    username: midra
+    password: midra_password
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+
+server:
+  port: 8080
+
+jwt:
+  secret: "\${JWT_SECRET:minha_chave_secreta_padrao_super_segura_12345}"
+  expiration-ms: 86400000 # 24 horas
